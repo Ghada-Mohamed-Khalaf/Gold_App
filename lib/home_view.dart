@@ -7,80 +7,116 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[600],
-
-
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Center(child: Text("TODAY PRICE",style: TextStyle(color: Colors.white),)),
-      ),
-      body:Container(
+        title: Center(
+          child: RichText(
 
-        padding: EdgeInsets.all(16),
+            text: const TextSpan(children: [TextSpan(
+              text: "TODAY",
+              style: TextStyle(color: Colors.white),
+            ),
+            TextSpan(
+            text: "GOLD",
+            style: TextStyle(color: Colors.orangeAccent),
+          ),
+
+
+],
+            ),
+          ),
+        ),
+      ),
+
+
+      body: Container(
+        padding: EdgeInsets.only(top: 50, right: 10, left: 10),
 
         color: Colors.black,
         margin: EdgeInsets.all(10),
-       // color: Colors.black,
+        // color: Colors.black,
         child: Row(
-          children: [Column(
-            children: [
-              Image.asset("assets/images/gold.png",width: MediaQuery.of(context).size.width/2.5,
-      height: MediaQuery.of(context).size.height/7,),
-
-              Text("GOLD",style: TextStyle(fontWeight: FontWeight.bold,fontSize:33,
-              //MediaQuery.of(context).size.width,
-                  color: Colors.orangeAccent,shadows:[
-                BoxShadow(
-                  color: Colors.yellow,
-                  offset: Offset(1 , 2),
-                ),
-
-              ] ),),
-              Text("1800💲",style: TextStyle(fontWeight: FontWeight.bold,fontSize:25,
-                  //MediaQuery.of(context).size.width,
-                  color: Colors.orangeAccent,shadows:[
-                    BoxShadow(
-                      color: Colors.yellow,
-                      offset: Offset(1 , 2),
-                    ),
-
-                  ] ),),
-
-            ],
-
-          ),
-            SizedBox(width: 10,),
+          children: [
             Column(
               children: [
-                Image.asset("assets/images/silver.png",width: MediaQuery.of(context).size.width/2.5,
-                  height: MediaQuery.of(context).size.height/7,),
-
-                Text("SILVER",style: TextStyle(fontWeight: FontWeight.bold,fontSize:33,
-                    //MediaQuery.of(context).size.width,
-                    color: Colors.white,shadows:[
-                      BoxShadow(
-                        color: Colors.yellow,
-                        offset: Offset(1 , 2),
-                      ),
-
-                    ] ),),
-                Text("1800💲",style: TextStyle(fontWeight: FontWeight.bold,fontSize:25,
-                    //MediaQuery.of(context).size.width,
-                    color: Colors.orangeAccent,shadows:[
-                      BoxShadow(
-                        color: Colors.yellow,
-                        offset: Offset(1 , 2),
-                      ),
-
-                    ] ),),
-
+                Image.asset(
+                  "assets/images/gold.png",
+                  width: MediaQuery.of(context).size.width / 2.5,
+                  height: MediaQuery.of(context).size.height / 7,
+                ),
+                Text(
+                  "GOLD",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 33,
+                      //MediaQuery.of(context).size.width,
+                      color: Colors.orangeAccent,
+                      shadows: [
+                        BoxShadow(
+                          color: Colors.yellow,
+                          offset: Offset(1, 2),
+                        ),
+                      ]),
+                ),
+                Text(
+                  "1800💲",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      //MediaQuery.of(context).size.width,
+                      color: Colors.orangeAccent,
+                      shadows: [
+                        BoxShadow(
+                          color: Colors.yellow,
+                          offset: Offset(1, 2),
+                        ),
+                      ]),
+                ),
               ],
-
             ),
-
+            SizedBox(
+              width: 10,
+            ),
+            Column(
+              children: [
+                Image.asset(
+                  "assets/images/silver.png",
+                  width: MediaQuery.of(context).size.width / 2.5,
+                  height: MediaQuery.of(context).size.height / 7,
+                ),
+                Text(
+                  "SILVER",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 33,
+                      //MediaQuery.of(context).size.width,
+                      color: Colors.white,
+                      shadows: [
+                        BoxShadow(
+                          color: Colors.yellow,
+                          offset: Offset(1, 2),
+                        ),
+                      ]),
+                ),
+                Text(
+                  "1800💲",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      //MediaQuery.of(context).size.width,
+                      color: Colors.orangeAccent,
+                      shadows: [
+                        BoxShadow(
+                          color: Colors.yellow,
+                          offset: Offset(1, 2),
+                        ),
+                      ]),
+                ),
+              ],
+            ),
           ],
         ),
-      ) ,
+      ),
     );
-
   }
 }
