@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gold_app/dio_helper.dart';
 import 'package:gold_app/home_view.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  DioHelper.init();
   runApp(const MyApp());
 }
 

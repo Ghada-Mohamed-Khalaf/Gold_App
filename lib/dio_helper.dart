@@ -13,6 +13,14 @@ class DioHelper{
 
     );
 
+Future<Response>getData(String url){
+
+  dio!.options.headers={
+    "x-access-token":"goldapi-z6cgsm1au9al1-io"
+
+  };
+  return dio!.get(url);
+}
 
   }
 
