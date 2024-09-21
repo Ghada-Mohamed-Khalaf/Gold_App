@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gold_app/cubit/cubit.dart';
 import 'package:gold_app/dio_helper.dart';
 import 'package:gold_app/home_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   DioHelper.init();
-  runApp(const MyApp());
+  runApp(
+      MultiBlocProvider(
+    providers: [
+      BlocProvider<MainCubit>(
+      create: (BuildContext context) => MainCubit()..getSilverPrice()..getGoldPrice(),
+  )
+    ],
+      child: const MyApp()));
 }
 
 class MyApp extends StatefulWidget {
