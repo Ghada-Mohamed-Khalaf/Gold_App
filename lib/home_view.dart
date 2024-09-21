@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:gold_app/dio_helper.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
   @override
+
   State<HomeView> createState() => _HomeViewState();
 }
 
 class _HomeViewState extends State<HomeView> {
   @override
+  void  initState(){
+    getGoldPrice();
+  }
+
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.grey[600],
       appBar: AppBar(
@@ -64,7 +71,7 @@ class _HomeViewState extends State<HomeView> {
                       ]),
                 ),
                 Text(
-                  "1800💲",
+                  "$goldI💲",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
@@ -124,5 +131,19 @@ class _HomeViewState extends State<HomeView> {
       ),
     );
   }
- getGoldPrice(){}
+  double? goldD;
+  int? goldI;
+
+  get error => null;
+ getGoldPrice(){
+    DioHelper.getData("XAU/USU/");
+   // .then((value){
+   //   setState(() { goldD= value.data["price"];
+   //   goldI=goldD!.round();
+     print(goldI);
+
+     }
+
+
+
 }

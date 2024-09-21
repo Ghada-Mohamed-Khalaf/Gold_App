@@ -24,4 +24,6 @@ Future<Response>getData(String url){
 
   }
 
+  static getData(String s) {}
+
 }
